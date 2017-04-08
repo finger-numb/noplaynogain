@@ -3,9 +3,9 @@
 
 @main("Login") {
 
-  <div class="container separate">
-    <div class="col-4-md col-md-offset-4">
-        <h2>Login</h2>
+  <div class="window">
+    <div class="col-4-md col-md-offset-5">
+        <h1>Login</h1>
         @helper.form(action=routes.Public.login()) {
           <fieldset>
             @helper.inputText(userForm("username"), '_showConstraints -> false, '_showErrors -> false)

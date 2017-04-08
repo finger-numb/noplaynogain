@@ -22,3 +22,5 @@ POST    /rate               controllers.Watplaces.rate
 GET     /ratings            controllers.Ratings.listAll
 GET     /test/:id                controllers.Watplaces.test(id: String)
 GET     /landing            controllers.Public.landing()
+GET     /trips    controllers.BTController.trips(from: String, to: String)
+GET     /createtrip        controllers.BTController.createTrip()
