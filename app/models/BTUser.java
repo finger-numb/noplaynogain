@@ -20,7 +20,7 @@ public class BTUser extends Model {
 
     @Constraints.Required
     @Column(unique=true)
-    @Constraints.ValidateWith(value= BTUser.UsernameValidator.class,message = "Username must contain " +
+    @Constraints.ValidateWith(value= BTUser.UsernameValidator.class, message = "Username must contain " +
             "at least 3 characters. All letters, numbers, points, dashes and underscores allowed.")
     public String username;
 
