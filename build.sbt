@@ -1,4 +1,4 @@
-name := """watforum"""
+name := """noplaynogain"""
 
 version := "1.0-SNAPSHOT"
 
