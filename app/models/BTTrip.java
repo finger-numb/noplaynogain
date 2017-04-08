@@ -31,4 +31,10 @@ public class BTTrip extends Model {
     @ManyToMany
     public List<BTUser> passengers = new ArrayList<>();
 
+    public static Finder<Long, BTTrip> finder = new Finder<>(BTTrip.class);
+
+    public static List<BTTrip> findAll(){
+        return finder.all();
+    }
+
 }
