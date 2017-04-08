@@ -36,6 +36,7 @@ public class Users extends Controller {
     }
 
     public static BTUser currentUser() {
+
         return BTUser.findUserByUsername(ctx().session().get("username"));
     }
 

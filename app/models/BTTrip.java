@@ -15,6 +15,15 @@ import java.util.List;
 @Entity
 public class BTTrip extends Model {
 
+    public BTTrip(BTUser owner, Date startDate, Integer numOfPlaces, Integer price, List<BTLocation> locations, List<BTUser> passengers) {
+        this.owner = owner;
+        this.startDate = startDate;
+        this.numOfPlaces = numOfPlaces;
+        this.price = price;
+        this.locations = locations;
+        this.passengers = passengers;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public Long id;

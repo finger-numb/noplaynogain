@@ -14,11 +14,13 @@
               inputValue = $('#input').val();
 
               // add new list item
-              listContainer.prepend('<li class="list-group-item" name="locations[]" value=inputValue> ' + inputValue + '</li>');
+              listContainer.prepend('<li class="list-group-item"> ' + inputValue + '</li>');
+              listContainer.prepend( '<input type="hidden" name="locations[]" value="' + inputValue + '"/>' );
+
+
+
               // clear value input
               $('#input').val('');
-
-
 
             });
 
@@ -49,8 +51,8 @@
         <div class="form-group">
           <label for="places">Locations</label>
           <div class="input-group">
-          <input class="form-control" type="text" id ="input" list="locationz" placeholder ="Add travel location...">
-           <datalist id="locationz">
+          <input class="form-control" type="text" id ="input" list="locations" placeholder ="Add travel location...">
+           <datalist id="locations">
                @for(location <- locations) {
                    <option value="@location.name">
                    }
@@ -60,7 +62,6 @@
             </span>
           </div>
           <ul id="list" class="list-group location-list">
-
           </ul>
 
         </div>

@@ -2,15 +2,15 @@ package controllers;
 
 import models.BTLocation;
 import models.BTTrip;
+import models.BTUser;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.*;
 
-import java.util.List;
+import java.util.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,7 +46,16 @@ public class BTController extends Controller {
 
     public Result saveTrip() {
         DynamicForm form = Form.form().bindFromRequest();
-        return ok(form.get("date"));
+        List<BTLocation> locations = new ArrayList<>();
+        int index = 0;
+//        BTTrip trip = new BTTrip(Users.currentUser(),
+//                null,
+//                Integer.parseInt(form.get("numOfPlaces")),
+//                Integer.parseInt(form.get("price")),
+//                null,
+//                null
+//                );
+        return ok(form.get("locations[]").toString());
     }
 
 
