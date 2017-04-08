@@ -32,8 +32,6 @@
 }
 
 #skylineWindow {
-    background: url("../images/skyline.jpg") bottom no-repeat;
-    background-size:100% auto;
     /*width: 100%;*/
     /*background-size: cover;*/
 }
