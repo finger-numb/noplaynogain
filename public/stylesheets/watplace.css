@@ -1,0 +1,14 @@
+#mapak {
+    height: 400px;
+    width: 100%;
+    /*padding: 20px 20px 20px 20px;*/
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+
+
+    /* bring your own prefixes */
+    transform: translate(-50%,10%);
+
+    /* bring your own prefixes */
+}

@@ -1,0 +1,41 @@
+#mynavbar {
+    margin-bottom: 0;
+    /*padding: 0 50px 0px 50px;*/
+}
+
+.separate {
+    margin-top: 40px;
+}
+
+.window {
+    padding: 2em;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+/*this is used for responsive text
+important: classes used here should not have font-size defined cause it will
+be overwritten */
+@media all and (max-width: 1200px) {
+    /* screen size until 1200px */
+    .descHeading {
+        font-size: 2.5em ;
+        /* 1.5x default size */
+    }
+}
+@media all and (max-width: 992px) {
+    /* screen size until 1000px */
+    .descHeading {
+        font-size: 2.1em ;
+        /* 1.2x default size */
+    }
+}
+@media all and (max-width: 768px) {
+    /* screen size until 500px */
+    .descHeading {
+        font-size: 1.7em;
+        /* 0.8x default size */
+    }
+}
