@@ -1,5 +1,4 @@
-@(userForm: Form[WatUser])
-@import helper._
+@(userForm: Form[BTUser])
 
 @main("Student form") {
   <h2>Register</h2>
@@ -10,8 +9,7 @@
       @helper.inputPassword(userForm("password"), '_label -> "Password", '_showConstraints -> false, '_showErrors -> false)
       @helper.inputText(userForm("firstName"), '_label -> "Name", '_showConstraints -> false, '_showErrors -> false)
       @helper.inputText(userForm("lastName"), '_label -> "Surname", '_showConstraints -> false, '_showErrors -> false)
-      @helper.inputText(userForm("country"), '_label -> "Country", '_showConstraints -> false, '_showErrors -> false)
-      @helper.inputDate(userForm("birth"), '_label -> "Birtdate", '_showConstraints -> false, '_showErrors -> false)
+      @helper.inputText(userForm("email"), '_label -> "Email", '_showConstraints -> false, '_showErrors -> false)
 
     </fieldset>
     <button type="submit" class="btn btn-primary">

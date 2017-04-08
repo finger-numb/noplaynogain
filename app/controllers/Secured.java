@@ -12,7 +12,6 @@ public class Secured extends Security.Authenticator {
         return ctx.session().get("username");
     }
 
-
     @Override
     public Result onUnauthorized(Context context) {
         return redirect(routes.Public.notAuthLoginForm());

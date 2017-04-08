@@ -1,7 +1,6 @@
 package controllers;
 
-import models.Rating;
-import models.WatUser;
+import models.BTUser;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -13,7 +12,7 @@ import java.util.List;
 
 
 /**
- * Created by teo on 11/27/16.
+ * Created by penic on on 08.04.17..
  */
 @Security.Authenticated(Secured.class)
 public class Users extends Controller {
@@ -22,7 +21,7 @@ public class Users extends Controller {
     private FormFactory formFactory;
 
     public Result listAllUsers() {
-        List<WatUser> list = WatUser.findAll();
+        List<BTUser> list = BTUser.findAll();
         return ok(listing.render(list));
     }
 
@@ -32,15 +31,12 @@ public class Users extends Controller {
     }
 
     public Result profile() {
-        WatUser user = currentUser();
-        List<Rating> userRatings = Rating.userRatings(user.id);
-        return ok(profile.render(user,userRatings));
+        BTUser user = currentUser();
+        return ok(profile.render(user));
     }
 
-//    user for helping views to get username
-    public static WatUser currentUser() {
-        return WatUser.findUserByUsername(ctx().session().get("username"));
+    public static BTUser currentUser() {
+        return BTUser.findUserByUsername(ctx().session().get("username"));
     }
-
 
 }
