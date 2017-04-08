@@ -13,7 +13,6 @@ POST    /register           controllers.Public.register()
 GET     /logout             controllers.Users.logout()
 GET     /profile            controllers.Users.profile()
 GET     /landing            controllers.Public.landing()
-
 GET     /                   controllers.Public.loginForm()
 GET     /                   controllers.Public.notAuthLoginForm()
 POST    /login              controllers.Public.login()

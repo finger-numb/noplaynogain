@@ -6,6 +6,9 @@ import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.*;
+
+import java.util.List;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +40,8 @@ public class BTController extends Controller {
     }
 
     public Result createTrip() {
-        return ok(views.html.createTrip.render());
+        List<BTLocation> locations = BTLocation.findAll();
+        return ok(createTrip.render(locations));
     }
 
     public Result saveTrip() {
