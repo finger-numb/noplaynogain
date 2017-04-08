@@ -1,0 +1,32 @@
+@()
+@main("Trips") {
+
+  <div class="window">
+    <div class="row">
+      <h2>Trips:</h2>
+      <table class="table table-bordered separate">
+        <thead>
+          <tr><th>Date</th><th>Price</th><th>Places left</th><th>Number of stops</th></tr>
+        </thead>
+        <tbody>
+          @* @for(rating <- ratings) {*@
+          @*<tr>*@
+          @*<td>*@
+          @* @rating.user.username*@
+          @*</td>*@
+          @*<td>*@
+          @*<a href="@routes.Watplaces.watPlace(rating.watPlace.googleID+"")"> @rating.watPlace.name</a>*@
+          @*</td>*@
+          @*<td>*@
+          @* @starRating(rating.rating)*@
+          @*</td>*@
+          @*<td>*@
+          @* @rating.getRatedAt*@
+          @*</td>*@
+          @*</tr>*@
+          @*}*@
+        </tbody>
+      </table>
+    </div>
+  </div>
+}

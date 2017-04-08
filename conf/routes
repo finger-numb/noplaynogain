@@ -18,3 +18,8 @@ GET     /                   controllers.Public.loginForm()
 GET     /                   controllers.Public.notAuthLoginForm()
 POST    /login              controllers.Public.login()
 GET     /listing            controllers.Users.listAllUsers()
+
+GET     /landing            controllers.Public.landing()
+GET     /trips    controllers.BTController.trips(from: String, to: String)
+GET     /createtrip        controllers.BTController.createTrip()
+
