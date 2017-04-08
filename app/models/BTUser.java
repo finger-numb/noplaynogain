@@ -6,6 +6,7 @@ import play.libs.F;
 
 import javax.persistence.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,6 +35,9 @@ public class BTUser extends Model {
     @Column(unique = true)
     @Constraints.Email
     public String email;
+
+    @OneToMany(mappedBy = "owner")
+    public List<BTTrip> trips = new ArrayList<>();
 
     @Override
     public String toString() {
