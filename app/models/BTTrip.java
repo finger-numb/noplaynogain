@@ -2,7 +2,10 @@ package models;
 
 import com.avaje.ebean.Model;
 import javax.persistence.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -35,6 +38,11 @@ public class BTTrip extends Model {
 
     public static List<BTTrip> findAll(){
         return finder.all();
+    }
+
+    public String dateToString() {
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        return  df.format(startDate);
     }
 
 }

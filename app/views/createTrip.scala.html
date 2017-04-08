@@ -14,7 +14,7 @@
               inputValue = $('#input').val();
 
               // add new list item
-              listContainer.prepend('<li class="list-group-item"> ' + inputValue + '</li>');
+              listContainer.prepend('<li class="list-group-item" name="locations[]" value=inputValue> ' + inputValue + '</li>');
               // clear value input
               $('#input').val('');
 
@@ -30,18 +30,18 @@
 
     <div class="row">
       <div class="col-md-4">
-      <form>
+      <form action="/saveTrip" method="post">
         <div class="form-group">
           <label for="date">Date and time of departure</label>
-          <input type="datetime-local" class="form-control" id="date">
+          <input type="datetime-local" class="form-control" id="date" name="date">
         </div>
         <div class="form-group">
           <label for="price">Price</label>
-          <input type="text" class="form-control" id="price">
+          <input type="text" class="form-control" id="price" name="price">
         </div>
         <div class="form-group">
-          <label for="places">Places</label>
-          <input type="text" class="form-control" id="places">
+          <label for="places">Number of places</label>
+          <input type="text" class="form-control" id="places" name="numOfPlaces">
         </div>
         <div class="form-group">
           <label for="places">Locations</label>
@@ -51,9 +51,9 @@
               <button class="btn btn-primary" id ="add" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
             </span>
           </div>
-          <ol id="list" class="list-group location-list">
+          <ul id="list" class="list-group location-list">
 
-          </ol>
+          </ul>
 
         </div>
 
