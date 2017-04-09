@@ -87,7 +87,9 @@ public class BTController extends Controller {
 
         for(String key : data.keySet()){
             if(key.startsWith("locations")){
-                trip.locations.add(BTLocation.findByName(data.get(key)));
+                BTLocation location = new BTLocation(data.get(key));
+                location.save();
+                trip.locations.add(location);
             }
         }
 
