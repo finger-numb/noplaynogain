@@ -44,8 +44,7 @@ public class BTController extends Controller {
     }
 
     public Result createTrip() {
-        List<BTLocation> locations = BTLocation.findAll();
-        return ok(createTrip.render(locations));
+        return ok(createTrip.render());
     }
 
     public Result saveTrip() {
@@ -89,7 +88,9 @@ public class BTController extends Controller {
 
         for(String key : data.keySet()){
             if(key.startsWith("locations")){
-                trip.locations.add(BTLocation.findByName(data.get(key)));
+                BTLocation location = new BTLocation(data.get(key));
+                location.save();
+                trip.locations.add(location);
             }
         }
 
