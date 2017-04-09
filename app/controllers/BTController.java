@@ -9,6 +9,9 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.*;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import java.util.List;
@@ -55,8 +58,40 @@ public class BTController extends Controller {
 //                null,
 //                null
 //                );
-        return ok(form.get("locations[]").toString());
+
+        Map<String, String> data = form.data();
+        BTTrip trip = parseTrip(data);
+
+
+        BTUser currentUser = Users.currentUser();
+        currentUser.trips.add(trip);
+        currentUser.save();
+
+        return redirect(routes.BTController.createTrip());
     }
 
+    private static BTTrip parseTrip(Map<String, String> data){
+        BTTrip trip = new BTTrip();
+
+        trip.owner = null;
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+        try {
+            trip.startDate = df.parse(data.get("date").replace('T', ' '));
+        } catch(ParseException e){
+            // TODO
+            e.printStackTrace();
+        }
+        trip.numOfPlaces = Integer.parseInt(data.get("numOfPlaces"));
+        trip.price = Integer.parseInt(data.get("price"));
+
+        for(String key : data.keySet()){
+            if(key.startsWith("locations")){
+                trip.locations.add(BTLocation.findByName(data.get(key)));
+            }
+        }
+
+        return trip;
+    }
 
 }

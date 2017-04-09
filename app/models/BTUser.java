@@ -36,7 +36,8 @@ public class BTUser extends Model {
     @Constraints.Email
     public String email;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    @JoinColumn(name = "owner_id")
     public List<BTTrip> trips = new ArrayList<>();
 
     @Override
