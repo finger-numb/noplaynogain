@@ -15,6 +15,9 @@ import java.util.List;
 @Entity
 public class BTTrip extends Model {
 
+    public BTTrip(){
+    }
+
     public BTTrip(BTUser owner, Date startDate, Integer numOfPlaces, Integer price, List<BTLocation> locations, List<BTUser> passengers) {
         this.owner = owner;
         this.startDate = startDate;
@@ -28,7 +31,7 @@ public class BTTrip extends Model {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public BTUser owner;
 
     public Date startDate;
@@ -37,10 +40,10 @@ public class BTTrip extends Model {
 
     public Integer price;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     public List<BTLocation> locations = new ArrayList<>();
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     public List<BTUser> passengers = new ArrayList<>();
 
     public static Finder<Long, BTTrip> finder = new Finder<>(BTTrip.class);
