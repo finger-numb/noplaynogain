@@ -103,8 +103,9 @@
 
     <div class="window">
         <h1 class="horizontalLine"><span>Create trip</span></h1>
-        <div class="row separate">
+        <div class="row separator">
             <div class="col-md-4">
+
                 <form action="/saveTrip" method="post">
                     <div class="form-group">
                         <label for="date">Date and time of departure</label>
@@ -124,16 +125,16 @@
                             <input type="text" id="pac-input" class="form-control" placeholder="Search seaside location ..." />
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" type="button">
-                                    <span class="glyphicon glyphicon-search"></span>
+                                    <span class="glyphicon glyphicon-plus"></span>
                                 </button>
                             </span>
                         </div>
                         <ul id="list" class="list-group location-list"></ul>
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default">Create</button>
                 </form>
             </div>
-            <div class="col-md-6 col-md-offset-5">
+            <div class="col-md-8">
                 <div id="map"></div>
                 <div id="infowindow-content">
                     <img src="" width="16" height="16" id="place-icon">
@@ -144,7 +145,6 @@
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOVsLLDx5MQmY4CUaD9-kt5Dqw5tPjJV4&libraries=places&callback=initMap">
                 </script>
             </div>
-
         </div>
     </div>
 

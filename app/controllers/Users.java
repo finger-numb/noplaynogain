@@ -20,11 +20,6 @@ public class Users extends Controller {
     @Inject
     private FormFactory formFactory;
 
-    public Result listAllUsers() {
-        List<BTUser> list = BTUser.findAll();
-        return ok(listing.render(list));
-    }
-
     public Result logout() {
         session().clear();
         return redirect(routes.Public.loginForm());

@@ -1,6 +1,5 @@
 package controllers;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import models.BTLocation;
 import models.BTTrip;
 import models.BTUser;
@@ -50,16 +49,6 @@ public class BTController extends Controller {
     public Result saveTrip() {
         DynamicForm form = Form.form().bindFromRequest();
         List<BTLocation> locations = new ArrayList<>();
-        int index = 0;
-//        BTTrip trip = new BTTrip(Users.currentUser(),
-//                null,
-//                Integer.parseInt(form.get("numOfPlaces")),
-//                Integer.parseInt(form.get("price")),
-//                null,
-//                null
-//                );
-
-
         Map<String, String> data = form.data();
         BTTrip trip = parseTrip(data);
 
