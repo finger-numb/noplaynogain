@@ -47,15 +47,5 @@
     font-size: 1.2em;
 }
 
-.horizontalLine {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid #000;
-    line-height: 0.1em;
-}
 
-.horizontalLine span {
-    background:#fff;
-    padding:0 15px;
-}
 

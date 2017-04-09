@@ -2,10 +2,10 @@
 
 @main("Student form") {
   <div class="window">
+      <h1 class="horizontalLine text-center"><span>Register</span></h1>
     <div class="col-4-md col-md-offset-5">
-      <h1>Register</h1>
       @helper.form(action = routes.Public.register()) {
-        <fieldset>
+        <fieldset class="separate">
           <input type="hidden" value="@userForm("id").valueOr("")" name="id" />
           @helper.inputText(userForm("username"), '_label -> "Username", '_showConstraints -> false, '_showErrors -> false)
           @helper.inputPassword(userForm("password"), '_label -> "Password", '_showConstraints -> false, '_showErrors -> false)

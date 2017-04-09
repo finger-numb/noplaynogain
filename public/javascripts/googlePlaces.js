@@ -9,6 +9,8 @@
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
+var BTplaces;
+
 function initAutocomplete() {
         // var map = new google.maps.Map(document.getElementById('map'), {
         //     center: {lat: 38, lng: 260},
@@ -32,24 +34,33 @@ function initAutocomplete() {
     searchBox.addListener('places_changed', function() {
         var places = searchBox.getPlaces();
         // window.location.replace("http://localhost:9000");
-        $.ajax({
-            type: "GET",
-            url: "/register"
-        });
-        if (places.length == 0) {
-            return;
-        }
+
         var finalPlace;
-        var num = 0;
         places.forEach(function(place) {
-            finalPlace = place;
-            num++;
-        });
-        // map.fitBounds(bounds);
-        if(num>1) {
-            alert("You have selected " + num + "places. Select just one!")
-        } else {
-            window.location.href = "http://localhost:9000/watplace/" +  finalPlace.place_id;
-        };
+                finalPlace = place;
+                num++;
+            });
+        initMap(finalPlace)
+
+        // $.ajax({
+        //     type: "GET",
+        //     url: "/register"
+        // });
+        // if (places.length == 0) {
+        //     return;
+        // }
+        // var finalPlace;
+        // var num = 0;
+        // places.forEach(function(place) {
+        //     finalPlace = place;
+        //     num++;
+        // });
+        // // map.fitBounds(bounds);
+        // if(num>1) {
+        //     alert("You have selected " + num + "places. Select just one!")
+        // } else {
+        //     window.location.href = "http://localhost:9000/watplace/" +  finalPlace.place_id;
+        // };
 });
 }
+
