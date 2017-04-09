@@ -2,11 +2,10 @@
 
 @main("Login") {
 
-  <div class="window">
+  <div class="window"><h1 class="text-center horizontalLine"><span>Login</span></h1>
     <div class="col-4-md col-md-offset-5">
-        <h1>Login</h1>
         @helper.form(action=routes.Public.login()) {
-          <fieldset>
+          <fieldset class="separate">
             @helper.inputText(userForm("username"), '_showConstraints -> false, '_showErrors -> false)
             @helper.inputPassword(userForm("password"), '_showConstraints -> false, '_showErrors -> false)
           </fieldset>

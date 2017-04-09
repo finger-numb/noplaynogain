@@ -1,5 +1,6 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import models.BTLocation;
 import models.BTTrip;
 import models.BTUser;
@@ -58,6 +59,7 @@ public class BTController extends Controller {
 //                null,
 //                null
 //                );
+
 
         Map<String, String> data = form.data();
         BTTrip trip = parseTrip(data);

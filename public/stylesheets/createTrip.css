@@ -1,3 +1,18 @@
 .location-list {
     margin-top: 10px;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+    /*padding: 20px 20px 20px 20px;*/
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
+
+
+    /* bring your own prefixes */
+    transform: translate(-50%,13%);
+
+    /* bring your own prefixes */
+}
