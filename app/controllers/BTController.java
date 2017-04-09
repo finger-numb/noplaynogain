@@ -44,8 +44,7 @@ public class BTController extends Controller {
     }
 
     public Result createTrip() {
-        List<BTLocation> locations = BTLocation.findAll();
-        return ok(createTrip.render(locations));
+        return ok(createTrip.render());
     }
 
     public Result saveTrip() {

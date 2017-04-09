@@ -6,7 +6,6 @@
 create table btlocation (
   id                            bigint not null,
   name                          varchar(255),
-  constraint uq_btlocation_name unique (name),
   constraint pk_btlocation primary key (id)
 );
 create sequence btlocation_seq;
