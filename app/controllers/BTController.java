@@ -57,7 +57,9 @@ public class BTController extends Controller {
         currentUser.trips.add(trip);
         currentUser.save();
 
-        return redirect(routes.BTController.createTrip());
+        flash("success", "Trip created!");
+
+        return redirect(routes.Public.landing());
     }
 
     private static BTTrip parseTrip(Map<String, String> data){
